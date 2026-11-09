@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pistola",
+    "cantidad": 12
+  },
+  {
+    "id": 2,
+    "nombre": "Subfusil",
+    "cantidad": 6
+  },
+  {
+    "id": 3,
+    "nombre": "Fusil de asalto",
+    "cantidad": 7
+  },
+  {
+    "id": 4,
+    "nombre": "Escopeta",
+    "cantidad": 7
+  },
+  {
+    "id": 5,
+    "nombre": "Rifle francotirador",
+    "cantidad": 5
+  },
+  {
+    "id": 6,
+    "nombre": "Ametralladora",
+    "cantidad": 4
+  },
+  {
+    "id": 7,
+    "nombre": "Arma pesada",
+    "cantidad": 9
+  },
+  {
+    "id": 8,
+    "nombre": "Explosivo",
+    "cantidad": 6
+  },
+  {
+    "id": 9,
+    "nombre": "Cuerpo a cuerpo",
+    "cantidad": 11
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Chaleco pesado",
+    "descripcion": "Proteccion completa",
+    "proteccion": 100,
+    "cantidad": 10
+  },
+  {
+    "id": 2,
+    "nombre": "Chaleco militar",
+    "descripcion": "Proteccion avanzada",
+    "proteccion": 90,
+    "cantidad": 5
+  },
+  {
+    "id": 3,
+    "nombre": "Chaleco tactico",
+    "descripcion": "Usado en misiones",
+    "proteccion": 80,
+    "cantidad": 2
+  },
+  {
+    "id": 4,
+    "nombre": "Chaleco reforzado",
+    "descripcion": "Proteccion media",
+    "proteccion": 70,
+    "cantidad": 4
+  },
+  {
+    "id": 5,
+    "nombre": "Chaleco ligero",
+    "descripcion": "Proteccion basica",
+    "proteccion": 50,
+    "cantidad": 1
+  }
+]

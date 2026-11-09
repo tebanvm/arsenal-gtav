@@ -9,6 +9,10 @@
 // Los filtros trabajan sobre este arreglo, sin volver a pedir datos.
 let armas = [];
 
+// Si no hay servidor (por ejemplo en GitHub Pages), la pagina usa
+// una copia de los datos guardada en la carpeta datos/ (archivos JSON)
+let sinServidor = false;
+
 // Elementos del DOM que se usan varias veces
 const listaArmas = document.getElementById('listaArmas');
 const contador = document.getElementById('contador');
@@ -69,8 +73,12 @@ function stat(nombre, valor) {
   `;
 }
 
-// Pide una ruta al servidor y devuelve el JSON
+// Pide una ruta al servidor y devuelve el JSON.
+// Sin servidor, /api/armas se cambia por datos/armas.json
 async function pedirDatos(ruta) {
+  if (sinServidor) {
+    ruta = ruta.replace('/api/', 'datos/') + '.json';
+  }
   const respuesta = await fetch(ruta);
   if (!respuesta.ok) {
     throw new Error(`La ruta ${ruta} respondio con error ${respuesta.status}`);
@@ -160,7 +168,10 @@ function mostrarEquipo(snacks, chalecos) {
 // Pide una sola arma al servidor (/api/armas/:id) y la muestra en el modal
 async function abrirFicha(id) {
   try {
-    const arma = await pedirDatos(`/api/armas/${id}`);
+    // Sin servidor, el arma se busca en las que ya estan cargadas
+    const arma = sinServidor
+      ? armas.find(a => a.id === Number(id))
+      : await pedirDatos(`/api/armas/${id}`);
     const tieneMunicion = arma.municion !== 'Sin municion';
 
     document.getElementById('fichaTipo').textContent = arma.tipo;
@@ -250,6 +261,13 @@ formFiltros.addEventListener('reset', () => setTimeout(aplicarFiltros, 0));
 // ---- Inicio ----
 
 async function iniciar() {
+  // Primero se prueba si el servidor responde
+  try {
+    await pedirDatos('/api/tipos');
+  } catch (error) {
+    sinServidor = true;
+  }
+
   try {
     // Se piden las cuatro rutas al mismo tiempo
     const [datosArmas, tipos, snacks, chalecos] = await Promise.all([

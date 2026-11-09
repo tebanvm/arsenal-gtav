@@ -21,11 +21,13 @@ arsenal-gtav/
 │   ├── index.html
 │   ├── estilos.css
 │   ├── app.js
+│   ├── datos/      (copia de los datos en JSON para GitHub Pages)
 │   └── img/        (imagenes optimizadas en WebP)
 ├── herramientas/
 │   └── optimizar-imagenes.js
 ├── imagenes-originales/   (las imagenes sin optimizar + LISTA.txt)
 ├── pruebas/        (capturas de Thunder Client)
+├── index.html      (redirige a frontend/, para GitHub Pages)
 ├── package.json
 └── README.md
 ```
@@ -42,9 +44,15 @@ arsenal-gtav/
    (en PowerShell puede que haya que usar `npm.cmd install` y `npm.cmd start`)
 4. Entrar a http://localhost:3000
 
+## Versión en GitHub Pages
+
+GitHub Pages no puede correr Node ni MySQL, así que ahí la página usa una copia de los datos que está en `frontend/datos/` (los mismos JSON que entregan las rutas `/api/...`). Al cargar, la página prueba si el servidor responde: si responde usa la base de datos, y si no, usa los JSON.
+
+Si se cambia la base de datos, hay que volver a guardar esos JSON abriendo cada ruta (por ejemplo http://localhost:3000/api/armas) y copiando el resultado en su archivo.
+
 ## Imágenes
 
-Cada imagen se llama con el ID de la base de datos (por ejemplo `49.png` es el Railgun). La lista de IDs está en `imagenes-originales/LISTA.txt`.
+Cada imagen se llama con el ID de la base de datos (por ejemplo `46.png` es el Railgun). La lista de IDs está en `imagenes-originales/LISTA.txt`.
 
 1. Guardar las imágenes en `imagenes-originales/armas`, `snacks` o `chalecos`.
 2. Ejecutar `npm run imagenes` (o `npm.cmd run imagenes`). El script las achica y las pasa a WebP en `frontend/img/`.
@@ -68,7 +76,7 @@ Las probé con Thunder Client, las capturas están en `pruebas/`.
 
 ## Lo que tiene la página
 
-- Tabla con las 70 armas, con barras de daño y cadencia y su precio
+- Tabla con las 67 armas, con barras de daño y cadencia y su precio
 - Filtros: buscar por nombre, tipo, munición y solo modificables
 - Ordenar por daño, cadencia, precisión, alcance o precio
 - Ficha de cada arma al hacer clic en su fila
