@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsenal GTA V</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tipografia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <!-- Encabezado con titulo y menu -->
+  <header class="encabezado">
+    <div class="encabezado-interior">
+      <h1 class="titulo">Arsenal GTA V</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#armas">Armas</a></li>
+          <li><a href="#equipo">Snacks y chalecos</a></li>
+          <li><a href="#acerca">Acerca</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- Bienvenida -->
+    <section id="inicio" class="bloque">
+      <h2>Bienvenido/a</h2>
+      <p>
+        Catalogo de las armas de GTA Online que arme en mi base de datos.
+        Puedes buscar un arma, filtrarla por tipo o municion y ver sus stats.
+      </p>
+      <!-- Las cantidades se llenan con JavaScript -->
+      <p class="resumen" id="resumen"></p>
+    </section>
+
+    <!-- Catalogo de armas -->
+    <section id="armas" class="bloque">
+      <h2>Armas</h2>
+
+      <!-- Filtros (se aplican en el DOM sin recargar la pagina) -->
+      <form id="filtros" class="row g-3 align-items-end mb-3" autocomplete="off">
+        <div class="col-md-6">
+          <label for="buscador" class="form-label">Buscar</label>
+          <input type="search" id="buscador" class="form-control" placeholder="Nombre del arma">
+        </div>
+        <div class="col-md-3">
+          <label for="filtroTipo" class="form-label">Tipo</label>
+          <select id="filtroTipo" class="form-select">
+            <option value="">Todos</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="filtroMunicion" class="form-label">Municion</label>
+          <select id="filtroMunicion" class="form-select">
+            <option value="">Todas</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="ordenar" class="form-label">Ordenar por</label>
+          <select id="ordenar" class="form-select">
+            <option value="">Tipo</option>
+            <option value="nombre">Nombre (A-Z)</option>
+            <option value="danio">Daño</option>
+            <option value="cadencia">Cadencia</option>
+            <option value="precision_arma">Precision</option>
+            <option value="alcance">Alcance</option>
+            <option value="precio">Precio</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="soloModificables">
+            <label class="form-check-label" for="soloModificables">Solo modificables</label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <button type="reset" class="boton w-100">Limpiar filtros</button>
+        </div>
+      </form>
+
+      <p class="contador" id="contador">Cargando armas...</p>
+
+      <!-- Tabla de armas: cada fila abre la ficha del arma -->
+      <div class="table-responsive">
+        <table class="table tabla-armas align-middle">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Imagen</span></th>
+              <th scope="col">Arma</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Municion</th>
+              <th scope="col" class="col-stat">Daño</th>
+              <th scope="col" class="col-stat">Cadencia</th>
+              <th scope="col" class="text-end">Precio</th>
+            </tr>
+          </thead>
+          <tbody id="listaArmas"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Snacks y chalecos -->
+    <section id="equipo" class="bloque">
+      <h2>Snacks y chalecos</h2>
+      <div class="row g-4">
+        <article class="col-lg-6">
+          <h3>Snacks</h3>
+          <ul class="lista-equipo" id="listaSnacks"></ul>
+        </article>
+        <article class="col-lg-6">
+          <h3>Chalecos antibalas</h3>
+          <ul class="lista-equipo" id="listaChalecos"></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Acerca -->
+    <section id="acerca" class="bloque">
+      <h2>Acerca</h2>
+      <p>
+        Hice esta página para mostrar las armas de GTA Online que tengo guardadas en mi base
+        de datos, Combat_gtaV. Los datos los entrega un servidor hecho con Node.js y Express,
+        y la página los pide con fetch, así que todo lo que aparece en la tabla sale directo de MySQL.
+      </p>
+      <p class="mb-0">
+        Las estadísticas y los precios no son los oficiales del juego: los puse yo de forma
+        aproximada para poder comparar las armas entre sí.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p class="mb-0">Esteban Venegas · Desarrollo Web · PUCV</p>
+    <small>Trabajo para la universidad, sin fines comerciales. GTA V y sus marcas pertenecen a Rockstar Games.</small>
+  </footer>
+
+  <!-- Ficha de detalle (modal de Bootstrap). Se llena con JavaScript -->
+  <div class="modal fade" id="fichaArma" tabindex="-1" aria-labelledby="fichaTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content ficha">
+        <div class="modal-header">
+          <div>
+            <span class="etiqueta-tipo" id="fichaTipo"></span>
+            <h2 class="modal-title ficha-titulo" id="fichaTitulo">Arma</h2>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="fichaCuerpo"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (ventana de la ficha) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

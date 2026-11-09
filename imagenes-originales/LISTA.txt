@@ -1,0 +1,90 @@
+LISTA DE IMAGENES - Arsenal GTA V (67 armas)
+
+Guarda cada imagen con el NUMERO del ID (por ejemplo 46.png) en la carpeta que corresponde.
+Sirven .png, .jpg, .jpeg o .webp. Despues ejecuta: npm.cmd run imagenes
+Las imagenes se buscan en gta.fandom.com con el nombre en ingles de la derecha.
+
+== ARMAS (carpeta imagenes-originales/armas) ==
+1.png  ->  Pistola                              buscar en la wiki: Pistol
+2.png  ->  Pistola de combate                   buscar en la wiki: Combat Pistol
+3.png  ->  Pistola perforante                   buscar en la wiki: AP Pistol
+4.png  ->  Pistola pesada                       buscar en la wiki: Heavy Pistol
+5.png  ->  Pistola vintage                      buscar en la wiki: Vintage Pistol
+6.png  ->  Pistola de duelista                  buscar en la wiki: Marksman Pistol
+7.png  ->  Pistola Mk II                        buscar en la wiki: Pistol Mk II
+8.png  ->  Revólver pesado                      buscar en la wiki: Heavy Revolver
+9.png  ->  Revólver pesado Mk II                buscar en la wiki: Heavy Revolver Mk II
+10.png  ->  Pistola de cerámica                 buscar en la wiki: Ceramic Pistol
+11.png  ->  Pistola SPN                         buscar en la wiki: SNS Pistol
+12.png  ->  Pistola SPN Mk II                   buscar en la wiki: SNS Pistol Mk II
+13.png  ->  Microametralladora                  buscar en la wiki: Micro SMG
+14.png  ->  Subfusil                            buscar en la wiki: SMG
+15.png  ->  Subfusil Mk II                      buscar en la wiki: SMG Mk II
+16.png  ->  Pistola ametralladora               buscar en la wiki: Machine Pistol
+17.png  ->  ADP de combate                      buscar en la wiki: Combat PDW
+18.png  ->  Subfusil táctico                    buscar en la wiki: Tactical SMG
+19.png  ->  Rifle de asalto                     buscar en la wiki: Assault Rifle
+20.png  ->  Carabina especial                   buscar en la wiki: Special Carbine
+21.png  ->  Carabina especial Mk II             buscar en la wiki: Special Carbine Mk II
+22.png  ->  Rifle avanzado                      buscar en la wiki: Advanced Rifle
+23.png  ->  Rifle militar                       buscar en la wiki: Military Rifle
+24.png  ->  Rifle de combate                    buscar en la wiki: Battle Rifle
+25.png  ->  Carabina de servicio                buscar en la wiki: Service Carbine
+26.png  ->  Escopeta de bombeo                  buscar en la wiki: Pump Shotgun
+27.png  ->  Escopeta recortada                  buscar en la wiki: Sawed-Off Shotgun
+28.png  ->  Escopeta de combate                 buscar en la wiki: Combat Shotgun
+29.png  ->  Escopeta pesada                     buscar en la wiki: Heavy Shotgun
+30.png  ->  Escopeta de asalto                  buscar en la wiki: Assault Shotgun
+31.png  ->  Escopeta de bombeo Mk II            buscar en la wiki: Pump Shotgun Mk II
+32.png  ->  Mosquete                            buscar en la wiki: Musket
+33.png  ->  Rifle de francotirador              buscar en la wiki: Sniper Rifle
+34.png  ->  Rifle de francotirador pesado       buscar en la wiki: Heavy Sniper
+35.png  ->  Rifle de francotirador pesado Mk II buscar en la wiki: Heavy Sniper Mk II
+36.png  ->  Rifle de tirador                    buscar en la wiki: Marksman Rifle
+37.png  ->  Rifle de tirador Mk II              buscar en la wiki: Marksman Rifle Mk II
+38.png  ->  Ametralladora                       buscar en la wiki: MG
+39.png  ->  Ametralladora de combate            buscar en la wiki: Combat MG
+40.png  ->  Ametralladora de combate Mk II      buscar en la wiki: Combat MG Mk II
+41.png  ->  Barredora Gusenberg                 buscar en la wiki: Gusenberg Sweeper
+42.png  ->  Minigun                             buscar en la wiki: Minigun
+43.png  ->  Lanzacohetes                        buscar en la wiki: RPG
+44.png  ->  Lanzagranadas                       buscar en la wiki: Grenade Launcher
+45.png  ->  Cañón de pirotecnia                 buscar en la wiki: Firework Launcher
+46.png  ->  Railgun                             buscar en la wiki: Railgun
+47.png  ->  Cañón orbital                       buscar en la wiki: Orbital Cannon
+48.png  ->  Viuda negra                         buscar en la wiki: Widowmaker
+49.png  ->  Lanzador teledirigido               buscar en la wiki: Homing Launcher
+50.png  ->  Lanzador de PEM compacto            buscar en la wiki: Compact EMP Launcher
+51.png  ->  Granada                             buscar en la wiki: Grenade
+52.png  ->  Bomba adhesiva                      buscar en la wiki: Sticky Bomb
+53.png  ->  Mina de proximidad                  buscar en la wiki: Proximity Mine
+54.png  ->  Gas lacrimógeno                     buscar en la wiki: Tear Gas
+55.png  ->  Cóctel molotov                      buscar en la wiki: Molotov Cocktail
+56.png  ->  Bola de nieve                       buscar en la wiki: Snowball
+57.png  ->  Cuchillo                            buscar en la wiki: Knife
+58.png  ->  Bate de béisbol                     buscar en la wiki: Baseball Bat
+59.png  ->  Palanca                             buscar en la wiki: Crowbar
+60.png  ->  Martillo                            buscar en la wiki: Hammer
+61.png  ->  Hacha de guerra                     buscar en la wiki: Battle Axe
+62.png  ->  Daga de caballería antigua          buscar en la wiki: Antique Cavalry Dagger
+63.png  ->  Machete                             buscar en la wiki: Machete
+64.png  ->  Linterna                            buscar en la wiki: Flashlight
+65.png  ->  Llave inglesa                       buscar en la wiki: Pipe Wrench
+66.png  ->  Botella                             buscar en la wiki: Broken Bottle
+67.png  ->  Puño americano                      buscar en la wiki: Knuckle Duster
+
+== SNACKS (carpeta imagenes-originales/snacks) ==
+1.png  ->  EgoChaser                        buscar en la wiki: Ego Chaser
+2.png  ->  Meteorite                        buscar en la wiki: Meteorite
+3.png  ->  Pisswasser                       buscar en la wiki: Pisswasser
+4.png  ->  eCola                            buscar en la wiki: eCola
+5.png  ->  Sprunk                           buscar en la wiki: Sprunk
+6.png  ->  Papas fritas                     buscar en la wiki: Phat Chips
+7.png  ->  Caramelo                         buscar en la wiki: P's & Q's
+
+== CHALECOS (carpeta imagenes-originales/chalecos) ==
+1.png  ->  Chaleco pesado                   buscar en la wiki: Super Heavy Armor
+2.png  ->  Chaleco militar                  buscar en la wiki: Heavy Armor
+3.png  ->  Chaleco tactico                  buscar en la wiki: Standard Body Armor
+4.png  ->  Chaleco reforzado                buscar en la wiki: Light Armor
+5.png  ->  Chaleco ligero                   buscar en la wiki: Super Light Armor

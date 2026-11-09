@@ -1,0 +1,332 @@
+/* Arsenal GTA V - estilos
+   Esteban Venegas
+   Paleta de colores de GTA V, ordenada del que mas se usa al que menos:
+   verde, amarillo, naranjo, celeste, verde salvia y rosado. */
+
+:root {
+  --verde: #47761E;      /* encabezado, titulos y pie */
+  --amarillo: #FED985;   /* fondo (suavizado) y fila marcada */
+  --naranjo: #F09E71;    /* botones y bordes de los bloques */
+  --celeste: #61B5CB;    /* barras de stats */
+  --salvia: #93B592;     /* bordes de los campos */
+  --rosado: #D5A0C4;     /* etiqueta del tipo de arma */
+
+  --fondo: #FFF8E6;      /* el amarillo, pero mucho mas claro */
+  --texto: #2b2b2b;
+  --texto-suave: #666;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Encabezado */
+.encabezado {
+  background: var(--verde);
+  color: #fff;
+  border-bottom: 5px solid var(--amarillo);
+}
+
+/* Titulo a la izquierda y menu a la derecha */
+.encabezado-interior {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.titulo {
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.menu a:hover {
+  color: var(--amarillo);
+}
+
+/* Contenido */
+.contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+/* Bloques blancos con una franja naranja a la izquierda */
+.bloque {
+  background: #fff;
+  border: 1px solid #e6e0cf;
+  border-left: 6px solid var(--naranjo);
+  border-radius: 6px;
+  padding: 22px 25px;
+  margin-bottom: 25px;
+  scroll-margin-top: 20px;
+}
+
+.bloque h2 {
+  color: var(--verde);
+  font-weight: 800;
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+}
+
+.bloque h3 {
+  color: var(--verde);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.resumen {
+  font-weight: 800;
+  color: var(--verde);
+  margin: 0;
+}
+
+/* Filtros */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-control,
+.form-select {
+  border: 2px solid var(--salvia);
+  border-radius: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde);
+  box-shadow: none;
+}
+
+.form-check-input {
+  border: 2px solid var(--salvia);
+}
+
+.form-check-input:checked {
+  background-color: var(--verde);
+  border-color: var(--verde);
+}
+
+/* Boton */
+.boton {
+  background: var(--naranjo);
+  color: var(--texto);
+  border: none;
+  border-radius: 12px;
+  padding: 9px 18px;
+  font-weight: 800;
+}
+
+.boton:hover {
+  background: var(--verde);
+  color: #fff;
+}
+
+.contador {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* Tabla de armas */
+.tabla-armas th {
+  color: var(--verde);
+  font-weight: 800;
+  border-bottom: 2px solid var(--verde);
+}
+
+.tabla-armas tbody tr {
+  cursor: pointer;
+}
+
+/* Fila marcada en amarillo al pasar el mouse */
+.tabla-armas tbody tr:hover td,
+.tabla-armas tbody tr:focus td {
+  background: var(--amarillo);
+}
+
+.tabla-armas tbody tr:focus {
+  outline: 2px solid var(--verde);
+}
+
+.nombre-arma {
+  font-weight: 600;
+}
+
+.col-stat {
+  width: 16%;
+}
+
+.dato-gris {
+  color: var(--texto-suave);
+}
+
+.sin-resultados td {
+  color: var(--texto-suave);
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Etiqueta del tipo de arma (rosado, el color que menos se usa) */
+.etiqueta-tipo {
+  display: inline-block;
+  background: var(--rosado);
+  color: var(--texto);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+/* Imagenes */
+.foto {
+  object-fit: contain;
+}
+
+.foto-tabla {
+  width: 96px;
+  height: 48px;
+}
+
+.foto-equipo {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
+
+.foto-ficha {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  margin: 0 auto 15px;
+  background: var(--fondo);
+  border-radius: 6px;
+}
+
+/* Barras de stats */
+.barra-stat {
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.barra-stat span {
+  display: block;
+  height: 100%;
+  background: var(--celeste);
+}
+
+.stat {
+  margin-bottom: 14px;
+}
+
+.stat p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* Snacks y chalecos */
+.lista-equipo {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-equipo li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.lista-equipo small {
+  color: var(--texto-suave);
+}
+
+.valor {
+  font-weight: 800;
+  color: var(--verde);
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/* Ficha del arma */
+.ficha {
+  border: none;
+  border-left: 6px solid var(--naranjo);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ficha .modal-header {
+  background: var(--verde);
+  color: #fff;
+}
+
+.ficha-titulo {
+  font-weight: 800;
+  font-size: 1.9rem;
+  margin: 6px 0 0;
+}
+
+.ficha-descripcion {
+  color: var(--texto-suave);
+}
+
+.ficha-subtitulo {
+  color: var(--verde);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.ficha-datos dt {
+  color: var(--texto-suave);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.ficha-datos dd {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Pie */
+.pie {
+  background: var(--verde);
+  color: #fff;
+  text-align: center;
+  padding: 18px 15px;
+}

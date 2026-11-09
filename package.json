@@ -1,0 +1,21 @@
+{
+  "name": "arsenal-gtav",
+  "version": "1.0.0",
+  "description": "Pagina web que lee armas y equipo de GTA V desde MySQL (Node + Express)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "imagenes": "node herramientas/optimizar-imagenes.js"
+  },
+  "author": "Esteban Venegas",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.2",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}
