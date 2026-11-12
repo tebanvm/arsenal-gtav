@@ -4,6 +4,10 @@ Proyecto de la Evaluación 3 de Diseño Web. Es una página que muestra las arma
 
 **Integrante:** Esteban Venegas
 
+**Página online:** https://tebanvm.github.io/arsenal-gtav/frontend/ (versión con copia de los datos, ver más abajo)
+
+**Repositorio:** https://github.com/tebanvm/arsenal-gtav
+
 ## Qué usé
 
 - Backend: Node.js + Express + mysql2
@@ -28,11 +32,14 @@ arsenal-gtav/
 ├── imagenes-originales/   (las imagenes sin optimizar + LISTA.txt)
 ├── pruebas/        (capturas de Thunder Client)
 ├── index.html      (redirige a frontend/, para GitHub Pages)
+├── .nojekyll       (para que GitHub Pages no use Jekyll)
 ├── package.json
 └── README.md
 ```
 
 ## Cómo ejecutarlo
+
+Se necesita tener instalado **Node.js** y **MySQL** (yo usé MySQL Workbench).
 
 1. Abrir `backend/datos.sql` en MySQL Workbench y ejecutarlo con el rayo. Crea la base Combat_gtaV.
 2. En `backend/server.js` poner el usuario y la contraseña de tu MySQL.
@@ -72,7 +79,15 @@ Las imágenes de las armas son del juego GTA V (Rockstar Games) y se usan solo c
 | GET `/api/snacks` | los snacks |
 | GET `/api/chalecos` | los chalecos |
 
-Las probé con Thunder Client, las capturas están en `pruebas/`.
+Las probé con Thunder Client (extensión de VS Code). Las capturas están en `pruebas/`:
+
+| Captura | Ruta probada | Resultado |
+| --- | --- | --- |
+| `ApiArmas.png` | GET `/api/armas` | 200 OK, las 67 armas |
+| `ApiArmas46.png` | GET `/api/armas/46` | 200 OK, solo el Railgun |
+| `ApiTipos.png` | GET `/api/tipos` | 200 OK, los 9 tipos con su cantidad |
+| `Sniper.png` | GET `/api/armas?tipo=5` | 200 OK, solo rifles de francotirador |
+| `ERROR.png` | GET `/api/armas/999` | 404 Not Found, "No existe un arma con ese ID" |
 
 ## Lo que tiene la página
 

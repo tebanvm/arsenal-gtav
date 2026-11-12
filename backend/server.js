@@ -33,19 +33,25 @@ app.use(express.static(path.join(__dirname, '..', 'frontend')));
 // Conexion a MySQL
 // CAMBIAR user y password por los de tu MySQL
 // ------------------------------------------------------------
-const conexion = mysql.createConnection({
+// Se usa un "pool": un grupo de conexiones que se reutilizan. Si una
+// conexion se corta (por ejemplo tras mucho rato sin uso), el pool abre
+// otra sola, asi el servidor no deja de responder.
+const conexion = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'root',
-  database: 'Combat_gtaV'
+  database: 'Combat_gtaV',
+  connectionLimit: 5
 });
 
-conexion.connect(err => {
+// Prueba la conexion al iniciar, para saber altiro si MySQL responde
+conexion.getConnection((err, prueba) => {
   if (err) {
     console.error('Error de conexion a MySQL:', err.message);
     return;
   }
   console.log('Conexion a MySQL exitosa (base Combat_gtaV)');
+  prueba.release();
 });
 
 // Funcion de apoyo: ejecuta una consulta y responde con JSON.

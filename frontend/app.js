@@ -157,7 +157,7 @@ function mostrarEquipo(snacks, chalecos) {
         ${limpiarTexto(c.nombre)}<br>
         <small>${limpiarTexto(c.descripcion)} · ${c.cantidad} unidades</small>
       </div>
-      <span class="valor">${c.proteccion}% proteccion</span>
+      <span class="valor">${c.proteccion}% protección</span>
     </li>
   `).join('');
 }
@@ -179,20 +179,20 @@ async function abrirFicha(id) {
 
     document.getElementById('fichaCuerpo').innerHTML = `
       ${imagen('armas', arma.id, arma.nombre, 480, 240, 'foto-ficha')}
-      <p class="ficha-descripcion">${limpiarTexto(arma.descripcion || 'Sin descripcion.')}</p>
+      <p class="ficha-descripcion">${limpiarTexto(arma.descripcion || 'Sin descripción.')}</p>
       <div class="row g-4">
         <div class="col-md-7">
           <h3 class="ficha-subtitulo">Stats</h3>
           ${stat('Daño', arma.danio ?? 0)}
           ${stat('Cadencia de fuego', arma.cadencia ?? 0)}
-          ${stat('Precision', arma.precision_arma ?? 0)}
+          ${stat('Precisión', arma.precision_arma ?? 0)}
           ${stat('Alcance', arma.alcance ?? 0)}
         </div>
         <div class="col-md-5">
           <h3 class="ficha-subtitulo">Datos</h3>
           <dl class="ficha-datos">
             <dt>Precio</dt><dd>${formatoPrecio(arma.precio)}</dd>
-            <dt>Municion</dt><dd>${limpiarTexto(arma.municion)}</dd>
+            <dt>Munición</dt><dd>${limpiarTexto(arma.municion)}</dd>
             ${tieneMunicion ? `<dt>Cargador</dt><dd>${arma.cantidad_actual} / ${arma.capacidad}</dd>` : ''}
             <dt>Modificaciones</dt><dd>${arma.modificable ? 'Se puede modificar' : 'No se puede modificar'}</dd>
           </dl>
@@ -284,7 +284,7 @@ async function iniciar() {
     mostrarEquipo(snacks, chalecos);
   } catch (error) {
     console.error('Error al cargar los datos:', error);
-    contador.textContent = 'No se pudieron cargar los datos. Revisa que el servidor y MySQL esten encendidos.';
+    contador.textContent = 'No se pudieron cargar los datos. Revisa que el servidor y MySQL estén encendidos.';
   }
 }
 
